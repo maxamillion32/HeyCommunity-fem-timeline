@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
-import { IonicModule } from 'ionic-angular';
-import { TranslateModule } from 'ng2-translate';
+import { CommonModule } from '../common/common.module';
 
 import { TimelineService } from './services/timeline.service';
 
 import { TimelinePage } from './pages/timeline';
-/*
 import { TimelineCreatePage } from './pages/timeline-create';
 import { TimelineDetailPage } from './pages/timeline-detail';
 import { TimelineCommentPage } from './pages/timeline-comment';
-*/
-import { CommonModule } from '../common/common.module';
 
 
 @NgModule({
@@ -19,19 +15,15 @@ import { CommonModule } from '../common/common.module';
   ],
   declarations: [
     TimelinePage,
-    /*
     TimelineCreatePage,
     TimelineDetailPage,
     TimelineCommentPage,
-    */
   ],
   entryComponents: [
     TimelinePage,
-    /*
     TimelineCreatePage,
     TimelineDetailPage,
     TimelineCommentPage,
-    */
   ],
   providers: [
     TimelineService,
