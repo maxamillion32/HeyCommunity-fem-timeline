@@ -54,6 +54,6 @@
   </div>
 
   <div class="preview-video" *ngIf="video">
-    <video width="60" (click)="videoPlay($event)" poster="{{ heyApp.helper.getVideo(video.poster) }}" src="{{ video.uri }}"></video>
+    <video width="60" preload="none" (click)="videoPlay($event)" poster="{{ heyApp.helper.getVideo(video.poster) }}" src="{{ video.uri }}"></video>
   </div>
 </ion-content>
