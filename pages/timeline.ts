@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { Timeline } from '../models/timeline.model';
-
 import { AppService } from '../../common/services/app.service';
 import { TimelineService } from '../services/timeline.service';
 
@@ -84,8 +82,9 @@ export class TimelinePage {
   //
   // Refresh
   doRefresh(refresher) {
+    let timeline = this.timelineService.timelines[0];
     let params: any = {
-      id: this.timelineService.timelines[0].id,
+      id: timeline ? timeline.id : 0,
     }
 
     this.timelineService.refresh(params)
@@ -100,8 +99,9 @@ export class TimelinePage {
   //
   // Infinite
   doInfinite(infiniteScroll) {
+    let length = this.timelineService.timelines.length;
     let params: any = {
-      id: this.timelineService.timelines[this.timelineService.timelines.length - 1].id,
+      id: length ? this.timelineService.timelines[length - 1].id : 0,
     }
 
     this.timelineService.infinite(params)
